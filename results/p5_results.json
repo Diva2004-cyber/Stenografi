@@ -1,0 +1,41 @@
+{
+    "PNG": {
+        "file_path": "C:\\Kriptografi\\Prak_6\\outputs\\p5\\stego.png",
+        "file_size_bytes": 357583,
+        "quality": "-",
+        "bit_errors": 0,
+        "total_bits": 1312,
+        "ber_percent": 0.0,
+        "header_bits": "00000000000000000000000010100000",
+        "extracted_payload_len": 160,
+        "text_status": "Terekstrak Sempurna",
+        "sample_extracted_text": "'237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan '",
+        "is_exact_match": true
+    },
+    "BMP": {
+        "file_path": "C:\\Kriptografi\\Prak_6\\outputs\\p5\\stego.bmp",
+        "file_size_bytes": 2764854,
+        "quality": "-",
+        "bit_errors": 0,
+        "total_bits": 1312,
+        "ber_percent": 0.0,
+        "header_bits": "00000000000000000000000010100000",
+        "extracted_payload_len": 160,
+        "text_status": "Terekstrak Sempurna",
+        "sample_extracted_text": "'237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan '",
+        "is_exact_match": true
+    },
+    "JPEG": {
+        "file_path": "C:\\Kriptografi\\Prak_6\\outputs\\p5\\stego.jpg",
+        "file_size_bytes": 95866,
+        "quality": "95",
+        "bit_errors": 630,
+        "total_bits": 1312,
+        "ber_percent": 48.01829268292683,
+        "header_bits": "10010010001101101110010001101101",
+        "extracted_payload_len": 2453070957,
+        "text_status": "Teks Rusak (Corrupted)",
+        "sample_extracted_text": "\"\ufffd\ufffd\\x1f\ufffd?\ufffd\ufffd\ufffd\\x1cp\\x07\ufffd\\x00\ufffd\ufffd\u0113\ufffd$\ufffd\ufffd\ufffdbqq\ufffd\ufffdI$m\ufffd\ufffdm\ufffd\ufffdI$\ufffdr7$\ufffd\ufffd\\x1bnF\ufffdm\ufffd\\x1br9\\x1b\ufffd8\ufffd\ufffd\\x1c\ufffdlI\ufffd\ufffdI\ufffd7$\ufffdI$\ufffd9#\ufffd\ufffd\ufffd$\ufffdI;\\x13\ufffd'bv'\\x1cq\ufffd\ufffd\\x1f\ufffd8\\x1f\ufffd8\ufffd\\x00\\x00\ufffdq\"",
+        "is_exact_match": false
+    }
+}

@@ -1,0 +1,4 @@
+Format,Quality,File_Size_Bytes,Bit_Error,Total_Bit,BER_Pct,Text_Status
+PNG,-,357583,0,1312,0.0,Terekstrak Sempurna
+BMP,-,2764854,0,1312,0.0,Terekstrak Sempurna
+JPEG,95,95866,630,1312,48.02,Teks Rusak (Corrupted)

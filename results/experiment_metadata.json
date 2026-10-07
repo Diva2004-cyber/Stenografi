@@ -1,0 +1,12 @@
+{
+    "student_name": "Diva Prayoga Alpariji Putra",
+    "student_nim": "237006173",
+    "param_a": 3,
+    "seed_correct": 237006173,
+    "seed_wrong": 237006174,
+    "cover_original": "C:\\Kriptografi\\Prak_6\\assets\\Diva_selfie.jpeg",
+    "timestamp": "2026-10-07T10:53:52.389880",
+    "python_version": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+    "numpy_version": "2.3.3",
+    "pillow_version": "11.3.0"
+}

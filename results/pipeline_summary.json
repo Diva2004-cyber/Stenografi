@@ -1,0 +1,501 @@
+{
+    "metadata": {
+        "student_name": "Diva Prayoga Alpariji Putra",
+        "student_nim": "237006173",
+        "param_a": 3,
+        "seed_correct": 237006173,
+        "seed_wrong": 237006174,
+        "cover_original": "C:\\Kriptografi\\Prak_6\\assets\\Diva_selfie.jpeg",
+        "timestamp": "2026-10-07T10:53:52.389880",
+        "python_version": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+        "numpy_version": "2.3.3",
+        "pillow_version": "11.3.0"
+    },
+    "execution_duration_seconds": 24.474865913391113,
+    "all_passed": true,
+    "total_checks": 18,
+    "passed_checks": 18,
+    "assertions": [
+        {
+            "check": "P0_Cover_Image_Valid",
+            "status": "PASS",
+            "details": "Dimensi 720x1280, Mode RGB"
+        },
+        {
+            "check": "P1_Fixed_Bitwise_LSB_Max_Diff",
+            "status": "PASS",
+            "details": "|delta|_max = 1 (Wajib <= 1)"
+        },
+        {
+            "check": "P1_Fixed_Exact_Extraction",
+            "status": "PASS",
+            "details": "Pesan rahasia terekstrak 100% identik"
+        },
+        {
+            "check": "P1_Fixed_3Channels_Capacity",
+            "status": "PASS",
+            "details": "Kapasitas 100% (337.5 KB)"
+        },
+        {
+            "check": "P1_Fixed_Delimiter_Word_Stego_Test",
+            "status": "PASS",
+            "details": "Pesan yang mengandung kata 'stego' tidak mengalami false termination"
+        },
+        {
+            "check": "P2_Correct_Seed_Match",
+            "status": "PASS",
+            "details": "Ekstraksi seed=237006173 berhasil identik"
+        },
+        {
+            "check": "P2_Wrong_Seed_Corruption",
+            "status": "PASS",
+            "details": "Ekstraksi seed=237006174 gagal/menghasilkan teks rusak"
+        },
+        {
+            "check": "P2_Change_Maps_Created",
+            "status": "PASS",
+            "details": "Change map sequential dan random tersimpan"
+        },
+        {
+            "check": "P3_mbit_Max_Diff_Bounded",
+            "status": "PASS",
+            "details": "Untuk semua m, |delta|_max <= 2^m - 1 terbukti valid"
+        },
+        {
+            "check": "P3_PSNR_Tradeoff_Order",
+            "status": "PASS",
+            "details": "PSNR m=1 (51.14 dB) > m=4 (31.97 dB)"
+        },
+        {
+            "check": "P3_Artifacts_Exported",
+            "status": "PASS",
+            "details": "Tabel CSV dan grafik PSNR vs m tersimpan"
+        },
+        {
+            "check": "P4_Scenario_A_Both_Keys_Correct",
+            "status": "PASS",
+            "details": "K_pos benar + K_enc benar -> Plaintext pulih 100%"
+        },
+        {
+            "check": "P4_Scenario_B_Wrong_Encryption_Key",
+            "status": "PASS",
+            "details": "K_pos benar + K_enc salah -> Ciphertext terbaca tapi gagal didekripsi"
+        },
+        {
+            "check": "P4_Scenario_C_Wrong_Position_Key",
+            "status": "PASS",
+            "details": "K_pos salah -> Header & ciphertext rusak total"
+        },
+        {
+            "check": "P5_Lossless_Formats_Zero_BER",
+            "status": "PASS",
+            "details": "PNG BER = 0.0%, BMP BER = 0.0%"
+        },
+        {
+            "check": "P5_JPEG_Lossy_Destruction",
+            "status": "PASS",
+            "details": "JPEG quality=95 BER = 48.02% (merusak LSB)"
+        },
+        {
+            "check": "Bonus_LSB_Planes_Demarcation",
+            "status": "PASS",
+            "details": "Visualisasi batas horizontal LSB 50% tersimpan"
+        },
+        {
+            "check": "Bonus_Chi_Square_PoV_Drop",
+            "status": "PASS",
+            "details": "Chi2 anjlok dari 3758.1 ke 90.2"
+        }
+    ],
+    "phase_results": {
+        "p1_baseline": {
+            "experiment": "P1_Baseline",
+            "cover_info": {
+                "cover_original": "Diva_selfie.jpeg",
+                "cover_working": "cover_working.png",
+                "format": "JPEG",
+                "mode": "RGB",
+                "width": 720,
+                "height": 1280,
+                "channels": 3,
+                "dtype": "uint8",
+                "total_pixels": 921600,
+                "total_bytes": 2764800
+            },
+            "secret_message": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+            "extracted_message": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+            "is_exact_match": true,
+            "total_message_bits_with_delimiter": 1320,
+            "max_diff_test_message": 1,
+            "changed_bytes": 676,
+            "total_bytes": 2764800,
+            "change_ratio": 0.0002445023148148148,
+            "mse": 0.0002445023148148148,
+            "psnr": 84.24797385725073,
+            "bug_analysis": {
+                "root_cause": "Slicing bin()[2:9] tidak mempertimbangkan padding 8-bit untuk nilai < 128",
+                "synthetic_tests": [
+                    {
+                        "original_val": 127,
+                        "bin_original": "0b1111111",
+                        "sliced_2_9": "1111111",
+                        "bit_injected": "0",
+                        "new_val": 254,
+                        "bin_new": "0b11111110",
+                        "abs_diff": 127
+                    },
+                    {
+                        "original_val": 127,
+                        "bin_original": "0b1111111",
+                        "sliced_2_9": "1111111",
+                        "bit_injected": "1",
+                        "new_val": 255,
+                        "bin_new": "0b11111111",
+                        "abs_diff": 128
+                    },
+                    {
+                        "original_val": 64,
+                        "bin_original": "0b1000000",
+                        "sliced_2_9": "1000000",
+                        "bit_injected": "0",
+                        "new_val": 128,
+                        "bin_new": "0b10000000",
+                        "abs_diff": 64
+                    },
+                    {
+                        "original_val": 64,
+                        "bin_original": "0b1000000",
+                        "sliced_2_9": "1000000",
+                        "bit_injected": "1",
+                        "new_val": 129,
+                        "bin_new": "0b10000001",
+                        "abs_diff": 65
+                    },
+                    {
+                        "original_val": 32,
+                        "bin_original": "0b100000",
+                        "sliced_2_9": "100000",
+                        "bit_injected": "0",
+                        "new_val": 64,
+                        "bin_new": "0b1000000",
+                        "abs_diff": 32
+                    },
+                    {
+                        "original_val": 32,
+                        "bin_original": "0b100000",
+                        "sliced_2_9": "100000",
+                        "bit_injected": "1",
+                        "new_val": 65,
+                        "bin_new": "0b1000001",
+                        "abs_diff": 33
+                    },
+                    {
+                        "original_val": 5,
+                        "bin_original": "0b101",
+                        "sliced_2_9": "101",
+                        "bit_injected": "0",
+                        "new_val": 10,
+                        "bin_new": "0b1010",
+                        "abs_diff": 5
+                    },
+                    {
+                        "original_val": 5,
+                        "bin_original": "0b101",
+                        "sliced_2_9": "101",
+                        "bit_injected": "1",
+                        "new_val": 11,
+                        "bin_new": "0b1011",
+                        "abs_diff": 6
+                    },
+                    {
+                        "original_val": 1,
+                        "bin_original": "0b1",
+                        "sliced_2_9": "1",
+                        "bit_injected": "0",
+                        "new_val": 2,
+                        "bin_new": "0b10",
+                        "abs_diff": 1
+                    },
+                    {
+                        "original_val": 1,
+                        "bin_original": "0b1",
+                        "sliced_2_9": "1",
+                        "bit_injected": "1",
+                        "new_val": 3,
+                        "bin_new": "0b11",
+                        "abs_diff": 2
+                    },
+                    {
+                        "original_val": 0,
+                        "bin_original": "0b0",
+                        "sliced_2_9": "0",
+                        "bit_injected": "0",
+                        "new_val": 0,
+                        "bin_new": "0b0",
+                        "abs_diff": 0
+                    },
+                    {
+                        "original_val": 0,
+                        "bin_original": "0b0",
+                        "sliced_2_9": "0",
+                        "bit_injected": "1",
+                        "new_val": 1,
+                        "bin_new": "0b1",
+                        "abs_diff": 1
+                    }
+                ],
+                "real_pixel_proof": {
+                    "pixel_index": 114157,
+                    "channel": 1,
+                    "channel_name": "G",
+                    "original_val": 127,
+                    "diff_with_bit_0": 127,
+                    "diff_with_bit_1": 128,
+                    "max_diff_possible": 128
+                }
+            }
+        },
+        "p1_fixed": {
+            "experiment": "P1_Fixed",
+            "secret_message": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+            "extracted_message": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+            "is_exact_match": true,
+            "header_type": "32-bit unsigned integer",
+            "header_bits": 32,
+            "payload_bytes": 160,
+            "payload_bits": 1280,
+            "total_bits_embedded": 1312,
+            "max_diff": 1,
+            "changed_bytes": 649,
+            "total_bytes": 2764800,
+            "change_ratio": 0.00023473668981481482,
+            "mse": 0.00023473668981481482,
+            "psnr": 84.4249938486634,
+            "capacity_analysis": {
+                "baseline_channels": "R, G (2 channels)",
+                "baseline_capacity_bits": 1843200,
+                "baseline_capacity_kb": 225.0,
+                "baseline_utilization_percent": 66.66666666666666,
+                "fixed_channels": "R, G, B (3 channels)",
+                "fixed_capacity_bits": 2764800,
+                "fixed_capacity_kb": 337.5,
+                "fixed_utilization_percent": 100.0
+            },
+            "delimiter_test": {
+                "message_with_stego_word": "237006173 - Diva Prayoga Alpariji Putra - Eksperimen stego ini membuktikan bahwa steganografi modern dengan header 32-bit tidak mengalami pemotongan dini.",
+                "extracted_successfully": true
+            }
+        },
+        "p2": {
+            "experiment": "P2_Random_LSB",
+            "seed_correct": 237006173,
+            "seed_wrong": 237006174,
+            "secret_message": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+            "scenario_correct_key": {
+                "seed": 237006173,
+                "is_exact_match": true,
+                "extracted_text": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan."
+            },
+            "scenario_wrong_key": {
+                "seed": 237006174,
+                "is_exact_match": false,
+                "header_decimal": 1486381633,
+                "corrupted_sample_text": "\"Z\ufffd\u0470{\\x1dA\\x14P\ufffd\\\\\\x1b\ufffd\ufffda\ufffdz\ufffd\ufffd\\x07aV\\x14\ufffd9\ufffd?\ufffd\ufffd\ufffd\ufffd\\x18\ufffd\u0609\ufffdtu\ufffd0\ufffd\ufffd}\ufffd\\x13G\\n\ufffd\ufffd8\ufffdgP\ufffd\ufffd\ufffd\\x071%\\x0f,\ufffd\ufffdf\ufffd&\\x1c\ufffdZ$\ufffdbfP_z\ufffdU\ufffd#{2\ufffd}\ufffd*\u0268\ufffd>v\ufffd'\ufffd\ufffdU\ufffd\\x1dc\ufffd\ufffd\ufffd\ufffd\ufffdQ\ufffdc\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\\np\ufffd\ufffdN}\\\\=\\\\\ufffd\ufffd\ufffd\\x14\ufffd\ufffd\ufffdJ\\x18\u0151\ufffd\ufffd\ufffd7ZV\ufffd\ufffdo\ufffd\ufffdC\ufffd1\ufffdmY)\ufffd\ufffd\ufffd\\x16\ufffdI\ufffd\"",
+                "corrupted_raw_hex": "5ad8d1b07b1d4114508c5c1bf284d661857adbc107615614a039b53f9bc8ebc4",
+                "note": "Header di luar batas kapasitas karena seed salah."
+            },
+            "image_metrics": {
+                "max_diff": 1,
+                "changed_bytes": 656,
+                "total_bytes": 2764800,
+                "change_ratio": 0.00023726851851851852,
+                "mse": 0.00023726851851851852,
+                "psnr": 84.37840242291048
+            },
+            "change_map_analysis": {
+                "changed_pixels_seq": 387,
+                "changed_pixels_rand": 655,
+                "bbox_seq": {
+                    "y_min": 0,
+                    "y_max": 0,
+                    "x_min": 0,
+                    "x_max": 437,
+                    "height_span": 1,
+                    "width_span": 438
+                },
+                "bbox_rand": {
+                    "y_min": 2,
+                    "y_max": 1279,
+                    "x_min": 1,
+                    "x_max": 719,
+                    "height_span": 1278,
+                    "width_span": 719
+                }
+            }
+        },
+        "p3": [
+            {
+                "m": 1,
+                "Capacity_Bits": 2764800,
+                "Capacity_Bytes": 345600,
+                "Capacity_KB": 337.5,
+                "Max_Diff_Actual": 1,
+                "Max_Diff_Theory": 1,
+                "Changed_Bytes": 1383945,
+                "Change_Ratio_Pct": 50.06,
+                "MSE": 0.5006,
+                "PSNR_dB": 51.14
+            },
+            {
+                "m": 2,
+                "Capacity_Bits": 5529600,
+                "Capacity_Bytes": 691200,
+                "Capacity_KB": 675.0,
+                "Max_Diff_Actual": 3,
+                "Max_Diff_Theory": 3,
+                "Changed_Bytes": 2072930,
+                "Change_Ratio_Pct": 74.98,
+                "MSE": 2.5037,
+                "PSNR_dB": 44.14
+            },
+            {
+                "m": 3,
+                "Capacity_Bits": 8294400,
+                "Capacity_Bytes": 1036800,
+                "Capacity_KB": 1012.5,
+                "Max_Diff_Actual": 7,
+                "Max_Diff_Theory": 7,
+                "Changed_Bytes": 2419545,
+                "Change_Ratio_Pct": 87.51,
+                "MSE": 10.596,
+                "PSNR_dB": 37.88
+            },
+            {
+                "m": 4,
+                "Capacity_Bits": 11059200,
+                "Capacity_Bytes": 1382400,
+                "Capacity_KB": 1350.0,
+                "Max_Diff_Actual": 15,
+                "Max_Diff_Theory": 15,
+                "Changed_Bytes": 2592298,
+                "Change_Ratio_Pct": 93.76,
+                "MSE": 41.3542,
+                "PSNR_dB": 31.97
+            }
+        ],
+        "p4": {
+            "experiment": "P4_Crypto_Stego",
+            "plaintext": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+            "keys": {
+                "k_position_correct": 237006173,
+                "k_position_wrong": 237006174,
+                "k_encryption_correct": 987654321,
+                "k_encryption_wrong": 987654322
+            },
+            "original_ciphertext_hex_prefix": "58ed26e00fb7ea7fd626d2e6c511894a0622a88a73aa8e53564fd13098f50836",
+            "scenario_a": {
+                "status": "SUCCESS",
+                "header_decimal": 160,
+                "ciphertext_hex": "58ed26e00fb7ea7fd626d2e6c511894a",
+                "decrypted_hex": "323337303036313733202d2044697661",
+                "decrypted_text": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+                "decrypted_repr": "'237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.'",
+                "is_exact_match": true,
+                "explanation": "Payload berhasil dibaca dari posisi acak."
+            },
+            "scenario_b": {
+                "status": "CORRUPTED_TEXT",
+                "header_decimal": 160,
+                "ciphertext_hex": "58ed26e00fb7ea7fd626d2e6c511894a",
+                "decrypted_hex": "43d7b6d8b6aa8173cb7fa5b51753ab22",
+                "decrypted_text": "C\u05f6\u0636\ufffd\ufffds\ufffd\u007f\ufffd\ufffd\u0017S\ufffd\"\ufffd\ufffd=\ufffd\ufffdJr\u0010@)0\ufffd(\ufffd\u0553M\ufffd\n\ufffd\ufffdn\ufffd\ufffd?\ufffd\ufffd_>}\ufffd\u000b\ufffdk\u0016g0\ufffd !\\N\ufffd\ufffd:\u0438Me\ufffd\ufffdD\ufffd\ufffd\u0016@\ufffddu\u047co\ufffd\u0013T\ufffd\ufffd\u0003\u0001\u0012\ufffd\ufffd\ufffdj\ufffd\u000f\u00a1k\u0011a\ufffd\u0019\ufffd{t\u001e\ufffd\u075bDud\ufffdV/\u001f\ufffdm\ufffd]g\ufffdu\ufffd\u000f\ufffd\u06598\ufffd\ufffd\f\ufffd\u0300v\ufffd\ufffdi\ufffd,\u0374\u000bS\ufffd\u0013*\ufffd\ufffdc\ufffd3\ufffdcf\u0004\ufffdF",
+                "decrypted_repr": "'C\\u05f6\u0636\ufffd\ufffds\ufffd\\x7f\ufffd\ufffd\\x17S\ufffd\"\ufffd\ufffd=\ufffd\ufffdJr\\x10@)0\ufffd(\ufffd\u0553M\ufffd\\n\ufffd\ufffdn\ufffd\ufffd?\ufffd\ufffd_>}\ufffd\\x0b\ufffdk\\x16g0\ufffd !\\\\N\ufffd\ufffd:\u0438Me\ufffd\ufffdD\ufffd\ufffd\\x16@\ufffddu\u047co\ufffd\\x13T\ufffd\ufffd\\x03\\x01\\x12\ufffd\ufffd\ufffdj\ufffd\\x0f\u00a1k\\x11a\ufffd\\x19\ufffd{t\\x1e\ufffd\u075bDud\ufffdV/\\x1f\ufffdm\ufffd]g\ufffdu\ufffd\\x0f\ufffd\u06598\ufffd\ufffd\\x0c\ufffd\u0300v\ufffd\ufffdi\ufffd,\u0374\\x0bS\ufffd\\x13*\ufffd\ufffdc\ufffd3\ufffdcf\\x04\ufffdF'",
+                "is_exact_match": false,
+                "explanation": "Payload berhasil dibaca dari posisi acak."
+            },
+            "scenario_c": {
+                "status": "FAILED_CORRUPT_POSITION",
+                "header_decimal": 1486381633,
+                "ciphertext_hex": "5ad8d1b07b1d4114508c5c1bf284d661",
+                "decrypted_hex": "3006c060449c9a5cb58aa3dd73fc294a",
+                "decrypted_repr": "'0\\x06\ufffd`D\ufffd\ufffd\\\\\ufffd\ufffd\ufffd\ufffds\ufffd)J\ufffd\\x08\\x01*\\r\ufffd\ufffd&\ufffd7\\x08\\x7fbO\ufffd\ufffd\ufffd\ufffd\ufffd\\\\}%\ufffd\ufffd6\ufffd\ufffd+\ufffd3CG:\ufffdk#\ufffd9\ufffd\ufffd\ufffd\ufffd\\x10T\\x1b\ufffd\ufffd\\x10O?\ufffd\\x1f\\x02a\ufffd\ufffd8>o\ufffd\\x1a\ufffd5\ufffd\\x14(\ufffd>\ufffdD\ufffd|_\ufffdRw\ufffdV\ufffd2\\x17\\x01\ufffd\\x17CY\ufffd2\u018fUT;\\x18h\ufffd\ufffdm\ufffd\ufffd\ufffd\ufffdEQ\ufffdz\u03ae\ufffd\ufffd|\ufffdW\\x08\ufffd~\\x1c\ufffdx2\u04bb\\x05\\x11\ufffd\ufffd\ufffdR\ufffd7\ufffd\ufffd\ufffd\ufffd[^\ufffdo\\n\ufffd\ufffd'",
+                "is_exact_match": false,
+                "explanation": "Kunci posisi salah -> header acak tidak valid di luar batas kapasitas citra."
+            },
+            "image_quality": {
+                "max_diff": 1,
+                "changed_bytes": 644,
+                "total_bytes": 2764800,
+                "change_ratio_pct": 0.023292824074074073,
+                "mse": 0.00023292824074074074,
+                "psnr_db": 84.45858214306897
+            }
+        },
+        "p5": {
+            "PNG": {
+                "file_path": "C:\\Kriptografi\\Prak_6\\outputs\\p5\\stego.png",
+                "file_size_bytes": 357583,
+                "quality": "-",
+                "bit_errors": 0,
+                "total_bits": 1312,
+                "ber_percent": 0.0,
+                "header_bits": "00000000000000000000000010100000",
+                "extracted_payload_len": 160,
+                "text_status": "Terekstrak Sempurna",
+                "sample_extracted_text": "'237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan '",
+                "is_exact_match": true
+            },
+            "BMP": {
+                "file_path": "C:\\Kriptografi\\Prak_6\\outputs\\p5\\stego.bmp",
+                "file_size_bytes": 2764854,
+                "quality": "-",
+                "bit_errors": 0,
+                "total_bits": 1312,
+                "ber_percent": 0.0,
+                "header_bits": "00000000000000000000000010100000",
+                "extracted_payload_len": 160,
+                "text_status": "Terekstrak Sempurna",
+                "sample_extracted_text": "'237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan '",
+                "is_exact_match": true
+            },
+            "JPEG": {
+                "file_path": "C:\\Kriptografi\\Prak_6\\outputs\\p5\\stego.jpg",
+                "file_size_bytes": 95866,
+                "quality": "95",
+                "bit_errors": 630,
+                "total_bits": 1312,
+                "ber_percent": 48.01829268292683,
+                "header_bits": "10010010001101101110010001101101",
+                "extracted_payload_len": 2453070957,
+                "text_status": "Teks Rusak (Corrupted)",
+                "sample_extracted_text": "\"\ufffd\ufffd\\x1f\ufffd?\ufffd\ufffd\ufffd\\x1cp\\x07\ufffd\\x00\ufffd\ufffd\u0113\ufffd$\ufffd\ufffd\ufffdbqq\ufffd\ufffdI$m\ufffd\ufffdm\ufffd\ufffdI$\ufffdr7$\ufffd\ufffd\\x1bnF\ufffdm\ufffd\\x1br9\\x1b\ufffd8\ufffd\ufffd\\x1c\ufffdlI\ufffd\ufffdI\ufffd7$\ufffdI$\ufffd9#\ufffd\ufffd\ufffd$\ufffdI;\\x13\ufffd'bv'\\x1cq\ufffd\ufffd\\x1f\ufffd8\\x1f\ufffd8\ufffd\\x00\\x00\ufffdq\"",
+                "is_exact_match": false
+            }
+        },
+        "bonus": {
+            "experiment": "Bonus_Visual_Steganalysis",
+            "capacity_percent": 50.0,
+            "capacity_bits": 1382400,
+            "rows_affected": 640,
+            "image_quality": {
+                "mse": 0.2505837673611111,
+                "psnr_db": 54.141274265873925
+            },
+            "chi_square_pov": {
+                "channel": "Red",
+                "top_half_cover_chi2": 3758.1047134017185,
+                "top_half_stego_chi2": 90.20297947678918,
+                "top_half_chi2_drop_pct": 97.59977471742292,
+                "bottom_half_cover_chi2": 6149.1920025480695,
+                "bottom_half_stego_chi2": 6149.1920025480695,
+                "significance": "Penyisipan LSB meratakan frekuensi pasangan nilai (2k, 2k+1) sehingga nilai Chi-Square anjlok drastis ke mendekati 0."
+            },
+            "visual_findings": {
+                "boundary_visible": true,
+                "boundary_row": 640,
+                "top_appearance": "Derau putih acak seragam (uniform random noise)",
+                "bottom_appearance": "Kontur tepi dan siluet alami wajah/rambut"
+            }
+        }
+    }
+}

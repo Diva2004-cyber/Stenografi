@@ -1,0 +1,31 @@
+{
+    "experiment": "P1_Fixed",
+    "secret_message": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+    "extracted_message": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+    "is_exact_match": true,
+    "header_type": "32-bit unsigned integer",
+    "header_bits": 32,
+    "payload_bytes": 160,
+    "payload_bits": 1280,
+    "total_bits_embedded": 1312,
+    "max_diff": 1,
+    "changed_bytes": 649,
+    "total_bytes": 2764800,
+    "change_ratio": 0.00023473668981481482,
+    "mse": 0.00023473668981481482,
+    "psnr": 84.4249938486634,
+    "capacity_analysis": {
+        "baseline_channels": "R, G (2 channels)",
+        "baseline_capacity_bits": 1843200,
+        "baseline_capacity_kb": 225.0,
+        "baseline_utilization_percent": 66.66666666666666,
+        "fixed_channels": "R, G, B (3 channels)",
+        "fixed_capacity_bits": 2764800,
+        "fixed_capacity_kb": 337.5,
+        "fixed_utilization_percent": 100.0
+    },
+    "delimiter_test": {
+        "message_with_stego_word": "237006173 - Diva Prayoga Alpariji Putra - Eksperimen stego ini membuktikan bahwa steganografi modern dengan header 32-bit tidak mengalami pemotongan dini.",
+        "extracted_successfully": true
+    }
+}

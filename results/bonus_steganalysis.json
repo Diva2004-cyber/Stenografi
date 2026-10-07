@@ -1,0 +1,25 @@
+{
+    "experiment": "Bonus_Visual_Steganalysis",
+    "capacity_percent": 50.0,
+    "capacity_bits": 1382400,
+    "rows_affected": 640,
+    "image_quality": {
+        "mse": 0.2505837673611111,
+        "psnr_db": 54.141274265873925
+    },
+    "chi_square_pov": {
+        "channel": "Red",
+        "top_half_cover_chi2": 3758.1047134017185,
+        "top_half_stego_chi2": 90.20297947678918,
+        "top_half_chi2_drop_pct": 97.59977471742292,
+        "bottom_half_cover_chi2": 6149.1920025480695,
+        "bottom_half_stego_chi2": 6149.1920025480695,
+        "significance": "Penyisipan LSB meratakan frekuensi pasangan nilai (2k, 2k+1) sehingga nilai Chi-Square anjlok drastis ke mendekati 0."
+    },
+    "visual_findings": {
+        "boundary_visible": true,
+        "boundary_row": 640,
+        "top_appearance": "Derau putih acak seragam (uniform random noise)",
+        "bottom_appearance": "Kontur tepi dan siluet alami wajah/rambut"
+    }
+}

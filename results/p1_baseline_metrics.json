@@ -1,0 +1,147 @@
+{
+    "experiment": "P1_Baseline",
+    "cover_info": {
+        "cover_original": "Diva_selfie.jpeg",
+        "cover_working": "cover_working.png",
+        "format": "JPEG",
+        "mode": "RGB",
+        "width": 720,
+        "height": 1280,
+        "channels": 3,
+        "dtype": "uint8",
+        "total_pixels": 921600,
+        "total_bytes": 2764800
+    },
+    "secret_message": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+    "extracted_message": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+    "is_exact_match": true,
+    "total_message_bits_with_delimiter": 1320,
+    "max_diff_test_message": 1,
+    "changed_bytes": 676,
+    "total_bytes": 2764800,
+    "change_ratio": 0.0002445023148148148,
+    "mse": 0.0002445023148148148,
+    "psnr": 84.24797385725073,
+    "bug_analysis": {
+        "root_cause": "Slicing bin()[2:9] tidak mempertimbangkan padding 8-bit untuk nilai < 128",
+        "synthetic_tests": [
+            {
+                "original_val": 127,
+                "bin_original": "0b1111111",
+                "sliced_2_9": "1111111",
+                "bit_injected": "0",
+                "new_val": 254,
+                "bin_new": "0b11111110",
+                "abs_diff": 127
+            },
+            {
+                "original_val": 127,
+                "bin_original": "0b1111111",
+                "sliced_2_9": "1111111",
+                "bit_injected": "1",
+                "new_val": 255,
+                "bin_new": "0b11111111",
+                "abs_diff": 128
+            },
+            {
+                "original_val": 64,
+                "bin_original": "0b1000000",
+                "sliced_2_9": "1000000",
+                "bit_injected": "0",
+                "new_val": 128,
+                "bin_new": "0b10000000",
+                "abs_diff": 64
+            },
+            {
+                "original_val": 64,
+                "bin_original": "0b1000000",
+                "sliced_2_9": "1000000",
+                "bit_injected": "1",
+                "new_val": 129,
+                "bin_new": "0b10000001",
+                "abs_diff": 65
+            },
+            {
+                "original_val": 32,
+                "bin_original": "0b100000",
+                "sliced_2_9": "100000",
+                "bit_injected": "0",
+                "new_val": 64,
+                "bin_new": "0b1000000",
+                "abs_diff": 32
+            },
+            {
+                "original_val": 32,
+                "bin_original": "0b100000",
+                "sliced_2_9": "100000",
+                "bit_injected": "1",
+                "new_val": 65,
+                "bin_new": "0b1000001",
+                "abs_diff": 33
+            },
+            {
+                "original_val": 5,
+                "bin_original": "0b101",
+                "sliced_2_9": "101",
+                "bit_injected": "0",
+                "new_val": 10,
+                "bin_new": "0b1010",
+                "abs_diff": 5
+            },
+            {
+                "original_val": 5,
+                "bin_original": "0b101",
+                "sliced_2_9": "101",
+                "bit_injected": "1",
+                "new_val": 11,
+                "bin_new": "0b1011",
+                "abs_diff": 6
+            },
+            {
+                "original_val": 1,
+                "bin_original": "0b1",
+                "sliced_2_9": "1",
+                "bit_injected": "0",
+                "new_val": 2,
+                "bin_new": "0b10",
+                "abs_diff": 1
+            },
+            {
+                "original_val": 1,
+                "bin_original": "0b1",
+                "sliced_2_9": "1",
+                "bit_injected": "1",
+                "new_val": 3,
+                "bin_new": "0b11",
+                "abs_diff": 2
+            },
+            {
+                "original_val": 0,
+                "bin_original": "0b0",
+                "sliced_2_9": "0",
+                "bit_injected": "0",
+                "new_val": 0,
+                "bin_new": "0b0",
+                "abs_diff": 0
+            },
+            {
+                "original_val": 0,
+                "bin_original": "0b0",
+                "sliced_2_9": "0",
+                "bit_injected": "1",
+                "new_val": 1,
+                "bin_new": "0b1",
+                "abs_diff": 1
+            }
+        ],
+        "real_pixel_proof": {
+            "pixel_index": 114157,
+            "channel": 1,
+            "channel_name": "G",
+            "original_val": 127,
+            "diff_with_bit_0": 127,
+            "diff_with_bit_1": 128,
+            "max_diff_possible": 128
+        }
+    }
+}

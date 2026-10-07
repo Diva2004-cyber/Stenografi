@@ -1,0 +1,50 @@
+[
+    {
+        "m": 1,
+        "Capacity_Bits": 2764800,
+        "Capacity_Bytes": 345600,
+        "Capacity_KB": 337.5,
+        "Max_Diff_Actual": 1,
+        "Max_Diff_Theory": 1,
+        "Changed_Bytes": 1383945,
+        "Change_Ratio_Pct": 50.06,
+        "MSE": 0.5006,
+        "PSNR_dB": 51.14
+    },
+    {
+        "m": 2,
+        "Capacity_Bits": 5529600,
+        "Capacity_Bytes": 691200,
+        "Capacity_KB": 675.0,
+        "Max_Diff_Actual": 3,
+        "Max_Diff_Theory": 3,
+        "Changed_Bytes": 2072930,
+        "Change_Ratio_Pct": 74.98,
+        "MSE": 2.5037,
+        "PSNR_dB": 44.14
+    },
+    {
+        "m": 3,
+        "Capacity_Bits": 8294400,
+        "Capacity_Bytes": 1036800,
+        "Capacity_KB": 1012.5,
+        "Max_Diff_Actual": 7,
+        "Max_Diff_Theory": 7,
+        "Changed_Bytes": 2419545,
+        "Change_Ratio_Pct": 87.51,
+        "MSE": 10.596,
+        "PSNR_dB": 37.88
+    },
+    {
+        "m": 4,
+        "Capacity_Bits": 11059200,
+        "Capacity_Bytes": 1382400,
+        "Capacity_KB": 1350.0,
+        "Max_Diff_Actual": 15,
+        "Max_Diff_Theory": 15,
+        "Changed_Bytes": 2592298,
+        "Change_Ratio_Pct": 93.76,
+        "MSE": 41.3542,
+        "PSNR_dB": 31.97
+    }
+]

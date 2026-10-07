@@ -1,0 +1,47 @@
+{
+    "experiment": "P2_Random_LSB",
+    "seed_correct": 237006173,
+    "seed_wrong": 237006174,
+    "secret_message": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan.",
+    "scenario_correct_key": {
+        "seed": 237006173,
+        "is_exact_match": true,
+        "extracted_text": "237006173 - Diva Prayoga Alpariji Putra - Praktikum ini menguji bagaimana pesan dapat disembunyikan secara aman tanpa mengubah tampilan citra secara signifikan."
+    },
+    "scenario_wrong_key": {
+        "seed": 237006174,
+        "is_exact_match": false,
+        "header_decimal": 1486381633,
+        "corrupted_sample_text": "\"Z\ufffd\u0470{\\x1dA\\x14P\ufffd\\\\\\x1b\ufffd\ufffda\ufffdz\ufffd\ufffd\\x07aV\\x14\ufffd9\ufffd?\ufffd\ufffd\ufffd\ufffd\\x18\ufffd\u0609\ufffdtu\ufffd0\ufffd\ufffd}\ufffd\\x13G\\n\ufffd\ufffd8\ufffdgP\ufffd\ufffd\ufffd\\x071%\\x0f,\ufffd\ufffdf\ufffd&\\x1c\ufffdZ$\ufffdbfP_z\ufffdU\ufffd#{2\ufffd}\ufffd*\u0268\ufffd>v\ufffd'\ufffd\ufffdU\ufffd\\x1dc\ufffd\ufffd\ufffd\ufffd\ufffdQ\ufffdc\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\\np\ufffd\ufffdN}\\\\=\\\\\ufffd\ufffd\ufffd\\x14\ufffd\ufffd\ufffdJ\\x18\u0151\ufffd\ufffd\ufffd7ZV\ufffd\ufffdo\ufffd\ufffdC\ufffd1\ufffdmY)\ufffd\ufffd\ufffd\\x16\ufffdI\ufffd\"",
+        "corrupted_raw_hex": "5ad8d1b07b1d4114508c5c1bf284d661857adbc107615614a039b53f9bc8ebc4",
+        "note": "Header di luar batas kapasitas karena seed salah."
+    },
+    "image_metrics": {
+        "max_diff": 1,
+        "changed_bytes": 656,
+        "total_bytes": 2764800,
+        "change_ratio": 0.00023726851851851852,
+        "mse": 0.00023726851851851852,
+        "psnr": 84.37840242291048
+    },
+    "change_map_analysis": {
+        "changed_pixels_seq": 387,
+        "changed_pixels_rand": 655,
+        "bbox_seq": {
+            "y_min": 0,
+            "y_max": 0,
+            "x_min": 0,
+            "x_max": 437,
+            "height_span": 1,
+            "width_span": 438
+        },
+        "bbox_rand": {
+            "y_min": 2,
+            "y_max": 1279,
+            "x_min": 1,
+            "x_max": 719,
+            "height_span": 1278,
+            "width_span": 719
+        }
+    }
+}
