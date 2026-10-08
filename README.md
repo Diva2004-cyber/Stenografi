@@ -159,9 +159,7 @@ c:\Kriptografi\Prak_6\
 │   ├── p4_crypto_stego.py          # Sistem pertahanan berlapis (XOR stream + LSB acak)
 │   ├── p5_formats.py               # Pengujian ketahanan format PNG, BMP, JPEG
 │   ├── bonus_steganalysis.py       # Ekstraksi bidang LSB & uji statistik Chi-Square
-│   ├── generate_screenshots.py     # Renderer otomatis tangkapan layar terminal
 │   ├── run_all.py                  # Master test suite & validator otomatis
-│   └── build_practicum_report.py   # Kompiler laporan 
 ```
 
 ---
